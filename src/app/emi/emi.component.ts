@@ -157,6 +157,6 @@ validateNonNegativeTenuer(event: Event) {
    
     input.value = input.value.replace('-', '');
   }
-  this.intrest = Number(input.value);
+  this.tenuer = Number(input.value);
 }
 }
