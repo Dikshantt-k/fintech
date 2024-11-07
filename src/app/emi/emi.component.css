@@ -1,0 +1,68 @@
+
+
+.circle-container {
+    position: relative;
+    
+}
+
+.circle {
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+   
+    stroke: #82dff7; /* Color for the progress */
+   
+    stroke-width: 18;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease,stroke-dashoffset 0.5s ease; 
+}
+
+.circle-progress {
+    fill: none;
+     /* Color for the progress */
+    stroke: #e5f4f8;
+
+    stroke-width: 18;
+    ;
+    transition: stroke-dashoffset 0.5s ease,stroke-dashoffset 0.5s ease;;
+}
+.circle-container:hover .circle-bg {
+    stroke: #82dff7; /* Lighter color on hover */
+    stroke-width: 18.5; /* Slightly thicker on hover */
+}
+.circle-container:hover .circle-progress {
+    stroke: #e5f4f8; /* Darker shade of green on hover */
+    stroke-width: 18.5; /* Slightly thicker on hover */
+}
+
+.percentage {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.cdc54Chip {
+    width: 20px;
+    height: 9px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #e5f4f8;
+    
+}
+
+.cdc54ChipB {
+    width: 20px;
+    height: 9px;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #82dff7;
+    
+}
+.btn-rounded {
+    border-radius: 50px; /* or any desired rounding */
+   
+}
+.table-color{
+    background-color: #7BD3EA;
+}
+
+

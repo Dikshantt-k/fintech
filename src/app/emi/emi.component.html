@@ -1,0 +1,148 @@
+<div class="container w-80 my-5 p-5 shadow">
+    <div class="row justify-content-center">
+        <div class="col-md">
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md">
+                        <h1>EMI calculator</h1>
+                    </div>
+                </div>
+
+                <div class="row my-1">
+                    <div class="col-md">
+                        <label for="principal">Principal</label>
+                        <input type="text" placeholder="enter principal amount" name="principal" id="principal"
+                            [(ngModel)]="principal" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row my-1">
+                    <div class="col-md">
+                        <label for="intrest">Rate of Intrest</label>
+                        <input type="text" placeholder="enter rate of intrest" name="intrest" id="intrest"
+                            [(ngModel)]="intrest" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md">
+                        <label for="tenuer">Loan tenuer</label>
+                        <input type="text" placeholder="loan tenuer in months" name="tenuer" id="tenuer"
+                            [(ngModel)]="tenuer" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md my-5">
+                        <button class=" button btn btn-primary btn-rounded  " (click)="calculate()">Calculate</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="stats mt-4">
+                        <div class="d-flex justify-content-between p-price"><span>Monthly EMI</span><span>₹ {{n}}
+                            </span></div>
+                    </div>
+                    <div class="stats mt-4">
+                        <div class="d-flex justify-content-between p-price"><span>Principal Amount</span><span>₹
+                                {{principal}} </span></div>
+                    </div>
+                    <div class="stats mt-4">
+                        <div class="d-flex justify-content-between p-price"><span>Total Intrest</span><span>₹
+                                {{total_interest}}</span></div>
+                    </div>
+                    <div class="stats mt-4">
+                        <div class="d-flex justify-content-between p-price"><span>Total payment</span><span>₹
+                                {{total_payment}}</span></div>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+        </div>
+
+
+        <div class="col-md justify-content-between ">
+            <div class=" d-flex flex-column flex-md-row justify-content-center  indicator my-3 text-center">
+
+                <div class="amount mx-4">
+                    <span>
+                        <div class="cdc54Chip mx-1"></div>
+                    </span><span> Principal Amount </span>
+                </div>
+
+                <div class="amount mx-4">
+                    <span>
+                        <div class="cdc54ChipB mx-1"></div>
+                    </span><span> Interest Amount </span>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 ">
+                    <div class="circle-container text-center">
+                        <svg class="circle" width="200" height="200">
+                            <circle class="circle-bg" cx="100" cy="100" r="90"></circle>
+                            <circle class="circle-progress" cx="100" cy="100" r="90"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row my-5">
+        <div class="col-md">
+            <div class="container">
+
+                <p class="d-inline-flex gap-1">
+                    <a class="btn btn-primary btn-rounded" data-bs-toggle="collapse" href="#collapseExample"
+                        (click)="drop_down()" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Emi instalment
+                    </a>
+                </p>
+
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <div class="table-responsive">
+                            <table class="table  table-success table-borderless ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Months</th>
+                                        <th scope="col">Principal paid</th>
+                                        <th scope="col">Interest Charged</th>
+                                        <th scope="col">Total Payment</th>
+                                        <th scope="col">Balannced</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let year of emiSchedule | keyvalue ; let yearIndex=index">
+                                        <tr>
+                                            <td colspan="5" class="fw-bold">Year: {{ year.key }}</td>
+                                        </tr>
+                                        <tr class="" *ngFor="let month of year.value;let monthIndex=index">
+                                            <td scope="row">₹ {{month.name}}</td>
+                                            <td> {{month.principal }}</td>
+                                            <td>{{month.interest}}</td>
+                                            <td>{{month.total_payment}}</td>
+                                            <td>{{month.balance}}</td>
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
