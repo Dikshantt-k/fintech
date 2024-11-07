@@ -128,4 +128,14 @@ export class EmiComponent  {
   this.isEmiScheduleGenerated=true
   
 }
+
+validateNonNegative(event: Event) {
+  const input = event.target as HTMLInputElement;
+
+  if (input.value.startsWith('-')) {
+   
+    input.value = input.value.replace('-', '');
+  }
+  this.principal = Number(input.value);
+}
 }

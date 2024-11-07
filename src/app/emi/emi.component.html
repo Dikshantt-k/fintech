@@ -12,24 +12,24 @@
                 <div class="row my-1">
                     <div class="col-md">
                         <label for="principal">Principal</label>
-                        <input type="text" placeholder="enter principal amount" name="principal" id="principal"
-                            [(ngModel)]="principal" class="form-control">
+                        <input type="number" placeholder="enter principal amount" name="principal" id="principal"
+                            [(ngModel)]="principal" class="form-control" pattern="^[0-9]*\\.?[0-9]+$" min="0"(input)="validateNonNegative($event)">
                     </div>
                 </div>
 
                 <div class="row my-1">
                     <div class="col-md">
                         <label for="intrest">Rate of Intrest</label>
-                        <input type="text" placeholder="enter rate of intrest" name="intrest" id="intrest"
-                            [(ngModel)]="intrest" class="form-control">
+                        <input type="number" placeholder="enter rate of intrest" name="intrest" id="intrest"
+                            [(ngModel)]="intrest" class="form-control" pattern="^[0-9]*\\.?[0-9]+$" min="0"(input)="validateNonNegative($event)">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md">
                         <label for="tenuer">Loan tenuer</label>
-                        <input type="text" placeholder="loan tenuer in months" name="tenuer" id="tenuer"
-                            [(ngModel)]="tenuer" class="form-control">
+                        <input type="number" placeholder="loan tenuer in months" name="tenuer" id="tenuer"
+                            [(ngModel)]="tenuer" class="form-control"pattern="^[0-9]*\\.?[0-9]+$" min="0"(input)="validateNonNegative($event)">
                     </div>
                 </div>
 
