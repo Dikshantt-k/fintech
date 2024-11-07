@@ -138,4 +138,25 @@ validateNonNegative(event: Event) {
   }
   this.principal = Number(input.value);
 }
+
+
+validateNonNegativeIntrest(event: Event) {
+  const input = event.target as HTMLInputElement;
+
+  if (input.value.startsWith('-')) {
+   
+    input.value = input.value.replace('-', '');
+  }
+  this.intrest = Number(input.value);
+}
+
+validateNonNegativeTenuer(event: Event) {
+  const input = event.target as HTMLInputElement;
+
+  if (input.value.startsWith('-')) {
+   
+    input.value = input.value.replace('-', '');
+  }
+  this.intrest = Number(input.value);
+}
 }
